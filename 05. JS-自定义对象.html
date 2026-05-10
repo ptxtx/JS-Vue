@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS-函数</title>
+</head>
+<body>
+  
+
+  <script>
+    //1. 自定义对象
+    let user={
+      name:'Tom',
+      age:18,
+      gender:'男',
+      sing(){
+        alert(this.name + '悠悠的唱着最炫的民族风~');
+      }
+    }
+
+    //let user = {
+    //  name: 'Tom',
+    //  age: 18,
+    //  gender: '男',
+    //  sing(){
+    //    alert(this.name + '悠悠的唱着最炫的民族风~')
+    //  }
+    //}
+
+    // let user = {
+    //   name: 'Tom',
+    //   age: 18,
+    //   gender: '男',
+    //   sing: () => { //注意: 在箭头函数中, this并不指向当前对象 - 指向的是当前对象的父级 【不推荐】
+    //     alert(this + ':悠悠的唱着最炫的民族风~')
+    //   }
+    // }
+
+    //2. 调用对象属性/方法
+    alert(user.name);
+    user.sing();
+
+    //3. JSON - JS对象标记法
+    let person={
+      name:'PTX',
+      age:18,
+      gender:'男'
+    }
+    alert(person);//输出[object Object] - 对象的字符串表示形式 那么如何查看对象的属性值呢？可以使用JSON.stringify()方法将对象转换为JSON字符串
+    alert(JSON.stringify(person));//输出{"name":"PTX","age":18,"gender":"男"}
+
+    let personJSON='{"name":"PTX","age":18,"gender":"男"}';//因为JSON本质是字符串，所以外层需要使用引号包裹起来
+    let personObj=JSON.parse(personJSON);//将JSON字符串转换为JS对象
+    alert(personObj.name);//输出PTX
+
+
+  </script>
+</body>
+</html>
