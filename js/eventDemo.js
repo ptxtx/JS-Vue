@@ -1,4 +1,4 @@
-import { printLog } from "./utils.js";
+import { printLog } from "./utils.js";//export import实现两个js文件之间的联系
 
 //click: 鼠标点击事件
 document.querySelector('#b2').addEventListener('click', () => {
